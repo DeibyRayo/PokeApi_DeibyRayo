@@ -1,2 +1,3 @@
 PokeApi V.1
-(/img/demo.png?raw=true "Demo")
+https://raw.githubusercontent.com/DeibyRayo/PokeApi_DeibyRayo/main/img/demo.png
+
