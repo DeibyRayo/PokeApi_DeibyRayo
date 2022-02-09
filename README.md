@@ -1,7 +1,7 @@
 
 ## PokeApi V.1
-Esta es una podex sencilla hecha con JavaScript Vanilla
+Esta es una pokedex sencilla hecha con JavaScript Vanilla
 
 👇 
 
-<p align="center"><img src="https://drive.google.com/file/d/1XE5x6G5qz7rnFqDgkfBpt2ZvlJMAhuPP/view?usp=sharing"/></p> 
+<p align="center"><img src="https://images.unsplash.com/photo-1613771404721-1f92d799e49f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80"/></p> 
