@@ -1,6 +1,7 @@
 const pokeContainer = document.getElementById("pokeContainer");
+//Le paso el id del container de html
 
-const pokemonsNumber = 150;
+const pokemonsNumber = 150; // numero de pokemones que van aparecer
 const colors = {
   fire: "#FDDFDF",
   grass: "#DEFDE0",
@@ -20,29 +21,29 @@ const colors = {
 
 const mainTypes = Object.keys(colors);
 
-const fetchPokemons = async () => {
+const fetchPokemons = async () => { //funcion para retornar los pokemons
   for (let i = 1; i <= pokemonsNumber; i++) {
     await getPokemon(i);
   }
 };
 
-const getPokemon = async (id) => {
-  const url = `https://pokeapi.co/api/v2/pokemon/${id}`;
-  const res = await fetch(url);
-  const pokemon = await res.json();
-  createPokemonCard(pokemon);
+const getPokemon = async (id) => { // funcion que requiere un id para traer al pokemon
+  const url = `https://pokeapi.co/api/v2/pokemon/${id}`; // trayendo la api con el id del pokemon
+  const res = await fetch(url); //buscar la url con la api fetch
+  const pokemon = await res.json(); //devuelvamelo en json
+  createPokemonCard(pokemon); //crear el pokemon
 };
 
-fetchPokemons();
+fetchPokemons(); // retorna los pokemones
 
 function createPokemonCard(pokemon) {
-  const pokemonEl = document.createElement("div");
-  pokemonEl.classList.add("pokemon");
+  const pokemonEl = document.createElement("div"); //crea el div del pokemon
+  pokemonEl.classList.add("pokemon"); //pasarle la clase pokemon para el estilo
 
-  const pokeTypes = pokemon.types.map((el) => el.type.name);
-  const type = mainTypes.find((type) => pokeTypes.indexOf(type) > -1);
-  const name = pokemon.name[0].toUpperCase() + pokemon.name.slice(1);
-  const color = colors[type];
+  const pokeTypes = pokemon.types.map((el) => el.type.name); //funcion para mapear el tipo de pokemon
+  const type = mainTypes.find((type) => pokeTypes.indexOf(type) > -1);// 
+  const name = pokemon.name[0].toUpperCase() + pokemon.name.slice(1);//poner la primera letra en mayuscula
+  const color = colors[type]; // llame los colores por tipo
   pokemonEl.style.backgroundColor = color;
   
   const pokeInnerHTML = `
@@ -57,7 +58,7 @@ function createPokemonCard(pokemon) {
     </div>
 	`;
 
-  pokemonEl.innerHTML = pokeInnerHTML;
+  pokemonEl.innerHTML = pokeInnerHTML; // se le pasa el pokemon + el div que contiene al pokemon con el estilo
 
   pokeContainer.appendChild(pokemonEl);
 }
