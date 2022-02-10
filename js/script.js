@@ -1,7 +1,7 @@
 const pokeContainer = document.getElementById("pokeContainer");
 //Le paso el id del container de html
 
-const pokemonsNumber = 150; // numero de pokemones que van aparecer
+const pokemonsNumber = 900; // numero de pokemones que van aparecer
 const colors = {
   fire: "#FDDFDF",
   grass: "#DEFDE0",
@@ -43,12 +43,12 @@ function createPokemonCard(pokemon) {
   const pokeTypes = pokemon.types.map((el) => el.type.name); //funcion para mapear el tipo de pokemon
   const type = mainTypes.find((type) => pokeTypes.indexOf(type) > -1);// 
   const name = pokemon.name[0].toUpperCase() + pokemon.name.slice(1);//poner la primera letra en mayuscula
-  const color = colors[type]; // llame los colores por tipo
-  pokemonEl.style.backgroundColor = color;
+  const color = colors[type]; 
+  pokemonEl.style.backgroundColor = color; // ponerle los colores a las cartas segun el tipo
   
   const pokeInnerHTML = `
 		<div class="img-container">
-			<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/
+			<img loading="lazy" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/
 			${pokemon.id}.png" />
 		</div>
     <div class="info">
